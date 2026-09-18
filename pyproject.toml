@@ -1,0 +1,21 @@
+[project]
+name = "ombak-nusantara"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "agno>=2.7.4",
+    "alembic>=1.18.5",
+    "celery>=5.6.3",
+    "chromadb>=1.5.9",
+    "fastapi>=0.139.2",
+    "feedparser>=6.0.12",
+    "mcp>=1.28.1",
+    "openai>=2.46.0",
+    "phidata>=2.7.10",
+    "pydantic-settings>=2.14.2",
+    "redis>=8.0.1",
+    "scalar-fastapi>=1.8.2",
+    "sqlmodel>=0.0.39",
+    "tavily-python>=0.7.26",
+    "uvicorn>=0.51.0",
+]

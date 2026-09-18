@@ -1,0 +1,4 @@
+[Sources]
+- Product content: workspace source files README.md, frontend/src/App.svelte, Dashboard.svelte, SurfMap.svelte, SurfPlanner.svelte, Community.svelte, Hazard.svelte.
+- Tech stack: README.md, frontend/package.json, backend/app/modules/surf/agents.py, backend/app/modules/mcp/server.py, backend/app/modules/knowledge/vectordb.py.
+- Visual: workspace-provided photo backend/uploads/268aadfce7f94387a3234f560e4e257c.webp.

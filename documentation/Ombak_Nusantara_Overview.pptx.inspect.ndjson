@@ -1,0 +1,100 @@
+{"kind":"deck","id":"pr/ofj4ez","name":"Deck"}
+{"kind":"layout","layoutId":"14d1b6f3-0d29-4ab3-b327-7982f9c5e7e1","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"b35a54fd-0e9b-41a4-9292-36732061c941","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/dqpaj4","slide":1,"title":"APLIKASI PENDAMPING SURFER INDONESIA","textShapes":4}
+{"kind":"textbox","id":"sh/wvy5cjap","slide":1,"name":"cover-kicker","text":"APLIKASI PENDAMPING SURFER INDONESIA","textPreview":"APLIKASI PENDAMPING SURFER INDONESIA","textChars":36,"textLines":1,"bbox":[42,42,540,24]}
+{"kind":"textbox","id":"sh/bupojet4","slide":1,"name":"cover-title","text":"Ombak\nNusantara","textPreview":"Ombak | Nusantara","textChars":15,"textLines":2,"bbox":[42,165,550,220]}
+{"kind":"shape","id":"sh/atgna9sj","slide":1,"name":"cover-rule","bbox":[42,430,108,5]}
+{"kind":"textbox","id":"sh/9s7mh4by","slide":1,"name":"cover-subtitle","text":"Temukan spot, pahami kondisi,\ndan rencanakan sesi dengan lebih percaya diri.","textPreview":"Temukan spot, pahami kondisi, | dan rencanakan sesi dengan lebih percaya diri.","textChars":76,"textLines":2,"bbox":[42,465,535,110]}
+{"kind":"textbox","id":"sh/nqp4futs","slide":1,"name":"footer-1","text":"Ombak Nusantara  /  01","textPreview":"Ombak Nusantara  /  01","textChars":22,"textLines":1,"bbox":[42,662,360,20]}
+{"kind":"image","id":"im/9sr2hcfm","slide":1,"name":"","geometry":"roundRect","alt":"Peselancar menunggangi ombak di pantai tropis","bbox":[658,42,582,588]}
+{"kind":"notes","id":"nt/dqpaj4","slide":1,"text":"[Sources]\nLocal image asset: backend/uploads/268aadfce7f94387a3234f560e4e257c.webp (workspace-provided).\nProduct statements based on workspace application source."}
+{"kind":"slide","id":"sl/cm9ixu","slide":2,"title":"Mengapa aplikasi ini dibuat","textShapes":9}
+{"kind":"textbox","id":"sh/d8369orq","slide":2,"name":"why-title","text":"Mengapa aplikasi ini dibuat","textPreview":"Mengapa aplikasi ini dibuat","textChars":27,"textLines":1,"bbox":[42,42,860,60]}
+{"kind":"textbox","id":"sh/q5sny9sf","slide":2,"name":"why-lead","text":"Persiapan untuk berselancar sering dimulai dari\ninformasi yang terpisah-pisah.","textPreview":"Persiapan untuk berselancar sering dimulai dari | informasi yang terpisah-pisah.","textChars":78,"textLines":2,"bbox":[42,174,575,116]}
+{"kind":"shape","id":"sh/b6lo7e9k","slide":2,"name":"why-dot-0","bbox":[698,183,14,14]}
+{"kind":"textbox","id":"sh/o3a5wja9","slide":2,"name":"why-item-0","text":"Kondisi berubah cepat","textPreview":"Kondisi berubah cepat","textChars":21,"textLines":1,"bbox":[730,174,440,34]}
+{"kind":"textbox","id":"sh/p4j654ru","slide":2,"name":"why-body-0","text":"Gelombang, angin, dan cuaca perlu dibaca bersama.","textPreview":"Gelombang, angin, dan cuaca perlu dibaca bersama.","textChars":49,"textLines":1,"bbox":[730,222,450,48]}
+{"kind":"shape","id":"sh/2hsnu9s3","slide":2,"name":"why-rule-0","bbox":[698,290,470,1]}
+{"kind":"shape","id":"sh/32143e9o","slide":2,"name":"why-dot-1","bbox":[698,328,14,14]}
+{"kind":"textbox","id":"sh/8ze583ad","slide":2,"name":"why-item-1","text":"Spot harus sesuai level","textPreview":"Spot harus sesuai level","textChars":23,"textLines":1,"bbox":[730,319,440,34]}
+{"kind":"textbox","id":"sh/90n6h8ry","slide":2,"name":"why-body-1","text":"Setiap surfer membutuhkan konteks yang berbeda.","textPreview":"Setiap surfer membutuhkan konteks yang berbeda.","textChars":47,"textLines":1,"bbox":[730,367,450,48]}
+{"kind":"shape","id":"sh/1szm58bu","slide":2,"name":"why-rule-1","bbox":[698,435,470,1]}
+{"kind":"shape","id":"sh/grqlw3a9","slide":2,"name":"why-dot-2","bbox":[698,473,14,14]}
+{"kind":"textbox","id":"sh/f6h43yto","slide":2,"name":"why-item-2","text":"Risiko perlu dibagikan","textPreview":"Risiko perlu dibagikan","textChars":22,"textLines":1,"bbox":[730,464,440,34]}
+{"kind":"textbox","id":"sh/e583uds3","slide":2,"name":"why-body-2","text":"Peringatan lokal membantu komunitas lebih siap.","textPreview":"Peringatan lokal membantu komunitas lebih siap.","textChars":47,"textLines":1,"bbox":[730,512,450,48]}
+{"kind":"textbox","id":"sh/t4zm18bi","slide":2,"name":"footer-2","text":"Ombak Nusantara  /  02","textPreview":"Ombak Nusantara  /  02","textChars":22,"textLines":1,"bbox":[42,662,360,20]}
+{"kind":"notes","id":"nt/cm9ixu","slide":2,"text":"[Sources]\nProduct framing based on workspace application source: frontend/src/Dashboard.svelte, frontend/src/SurfMap.svelte, and frontend/src/Hazard.svelte."}
+{"kind":"slide","id":"sl/nkd61b","slide":3,"title":"Apa itu Ombak Nusantara?","textShapes":11}
+{"kind":"textbox","id":"sh/kn65k76h","slide":3,"name":"what-title","text":"Apa itu Ombak Nusantara?","textPreview":"Apa itu Ombak Nusantara?","textChars":24,"textLines":1,"bbox":[42,42,900,60]}
+{"kind":"textbox","id":"sh/jmx4b25w","slide":3,"name":"what-intro","text":"Platform pendamping surfer untuk mengeksplorasi spot,\nmembaca kondisi, dan saling berbagi informasi.","textPreview":"Platform pendamping surfer untuk mengeksplorasi spot, | membaca kondisi, dan saling berbagi informasi.","textChars":100,"textLines":2,"bbox":[42,130,820,74]}
+{"kind":"shape","id":"sh/y1onixob","slide":3,"name":"what-accent-0","bbox":[42,248,76,5]}
+{"kind":"textbox","id":"sh/tszmhwny","slide":3,"name":"what-cell-title-0","text":"Surf Spots","textPreview":"Surf Spots","textChars":10,"textLines":1,"bbox":[42,275,470,40]}
+{"kind":"textbox","id":"sh/8rq5or6d","slide":3,"name":"what-cell-body-0","text":"Peta lokasi dan pencarian spot.","textPreview":"Peta lokasi dan pencarian spot.","textChars":31,"textLines":1,"bbox":[42,324,500,56]}
+{"kind":"shape","id":"sh/7qh4fm5s","slide":3,"name":"what-accent-1","bbox":[656,248,76,5]}
+{"kind":"textbox","id":"sh/6p8nmho7","slide":3,"name":"what-cell-title-1","text":"Forecast","textPreview":"Forecast","textChars":8,"textLines":1,"bbox":[656,275,470,40]}
+{"kind":"textbox","id":"sh/9wvm5snu","slide":3,"name":"what-cell-body-1","text":"Gelombang, angin, dan tren kondisi.","textPreview":"Gelombang, angin, dan tren kondisi.","textChars":35,"textLines":1,"bbox":[656,324,500,56]}
+{"kind":"shape","id":"sh/ovmlcn69","slide":3,"name":"what-accent-2","bbox":[42,462,76,5]}
+{"kind":"textbox","id":"sh/idk72xkv","slide":3,"name":"what-cell-title-2","text":"Surf Planner","textPreview":"Surf Planner","textChars":12,"textLines":1,"bbox":[42,489,470,40]}
+{"kind":"textbox","id":"sh/jet8b2lg","slide":3,"name":"what-cell-body-2","text":"Rencana sesi sesuai level dan waktu.","textPreview":"Rencana sesi sesuai level dan waktu.","textChars":36,"textLines":1,"bbox":[42,538,500,56]}
+{"kind":"shape","id":"sh/4f2p4721","slide":3,"name":"what-accent-3","bbox":[656,462,76,5]}
+{"kind":"textbox","id":"sh/5gvqdc3m","slide":3,"name":"what-cell-title-3","text":"Hazard Alert","textPreview":"Hazard Alert","textChars":12,"textLines":1,"bbox":[656,489,470,40]}
+{"kind":"textbox","id":"sh/6h476hk7","slide":3,"name":"what-cell-body-3","text":"Laporan risiko dari komunitas.","textPreview":"Laporan risiko dari komunitas.","textChars":30,"textLines":1,"bbox":[656,538,500,56]}
+{"kind":"textbox","id":"sh/r2d8fmls","slide":3,"name":"footer-3","text":"Ombak Nusantara  /  03","textPreview":"Ombak Nusantara  /  03","textChars":22,"textLines":1,"bbox":[42,662,360,20]}
+{"kind":"notes","id":"nt/nkd61b","slide":3,"text":"[Sources]\nFeature inventory based on workspace application source: frontend/src/App.svelte, frontend/src/SurfMap.svelte, frontend/src/SurfPlanner.svelte, and frontend/src/Hazard.svelte."}
+{"kind":"slide","id":"sl/k2jexh","slide":4,"title":"Dari pencarian spot sampai sesi yang lebih siap","textShapes":12}
+{"kind":"textbox","id":"sh/m9gr2lob","slide":4,"name":"flow-title","text":"Dari pencarian spot sampai sesi yang lebih siap","textPreview":"Dari pencarian spot sampai sesi yang lebih siap","textChars":47,"textLines":1,"bbox":[42,42,1120,60]}
+{"kind":"textbox","id":"sh/9c7ax0n2","slide":4,"name":"flow-lead","text":"Alur yang sederhana untuk membantu keputusan sebelum masuk air.","textPreview":"Alur yang sederhana untuk membantu keputusan sebelum masuk air.","textChars":63,"textLines":1,"bbox":[42,123,900,34]}
+{"kind":"shape","id":"sh/8by94v6h","slide":4,"name":"flow-line","bbox":[83,343,1050,2]}
+{"kind":"shape","id":"sh/z65sr65k","slide":4,"name":"flow-dot-0","bbox":[77,336,16,16]}
+{"kind":"textbox","id":"sh/y5wry1of","slide":4,"name":"flow-num-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[84,273,100,30]}
+{"kind":"textbox","id":"sh/l87atgnq","slide":4,"name":"flow-stage-0","text":"Pilih spot","textPreview":"Pilih spot","textChars":10,"textLines":1,"bbox":[84,394,300,42]}
+{"kind":"textbox","id":"sh/k7y90b65","slide":4,"name":"flow-body-0","text":"Cari pantai yang ingin dieksplorasi.","textPreview":"Cari pantai yang ingin dieksplorasi.","textChars":36,"textLines":1,"bbox":[84,449,300,64]}
+{"kind":"shape","id":"sh/bi5sn6po","slide":4,"name":"flow-dot-1","bbox":[467,336,16,16]}
+{"kind":"textbox","id":"sh/qhwru1o3","slide":4,"name":"flow-num-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[474,273,100,30]}
+{"kind":"textbox","id":"sh/8bqd0fax","slide":4,"name":"flow-stage-1","text":"Cek kondisi","textPreview":"Cek kondisi","textChars":11,"textLines":1,"bbox":[474,394,300,42]}
+{"kind":"textbox","id":"sh/9cze9kri","slide":4,"name":"flow-body-1","text":"Lihat gelombang, angin, dan peringatan.","textPreview":"Lihat gelombang, angin, dan peringatan.","textChars":39,"textLines":1,"bbox":[474,449,300,64]}
+{"kind":"shape","id":"sh/m9ovy5s7","slide":4,"name":"flow-dot-2","bbox":[857,336,16,16]}
+{"kind":"textbox","id":"sh/naxw7a9s","slide":4,"name":"flow-num-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[864,273,100,30]}
+{"kind":"textbox","id":"sh/076dwva1","slide":4,"name":"flow-stage-2","text":"Susun rencana","textPreview":"Susun rencana","textChars":13,"textLines":1,"bbox":[864,394,300,42]}
+{"kind":"textbox","id":"sh/l8fe50rm","slide":4,"name":"flow-body-2","text":"Siapkan sesi sesuai kebutuhanmu.","textPreview":"Siapkan sesi sesuai kebutuhanmu.","textChars":32,"textLines":1,"bbox":[864,449,300,64]}
+{"kind":"textbox","id":"sh/y5ovu5sv","slide":4,"name":"footer-4","text":"Ombak Nusantara  /  04","textPreview":"Ombak Nusantara  /  04","textChars":22,"textLines":1,"bbox":[42,662,360,20]}
+{"kind":"notes","id":"nt/k2jexh","slide":4,"text":"[Sources]\nWorkflow based on workspace application source: frontend/src/Surfing.svelte, frontend/src/SurfMap.svelte, and frontend/src/SurfPlanner.svelte."}
+{"kind":"slide","id":"sl/s1cbu6","slide":5,"title":"TUJUAN AKHIR","textShapes":11}
+{"kind":"textbox","id":"sh/kjal4fep","slide":5,"name":"outcome-kicker","text":"TUJUAN AKHIR","textPreview":"TUJUAN AKHIR","textChars":12,"textLines":1,"bbox":[42,42,240,28]}
+{"kind":"textbox","id":"sh/zy1kbad4","slide":5,"name":"outcome-title","text":"Sesi yang lebih\npercaya diri.","textPreview":"Sesi yang lebih | percaya diri.","textChars":29,"textLines":2,"bbox":[42,138,570,190]}
+{"kind":"textbox","id":"sh/yxs325wj","slide":5,"name":"outcome-copy","text":"Ombak Nusantara menghubungkan kondisi laut,\nrencana personal, dan informasi komunitas.","textPreview":"Ombak Nusantara menghubungkan kondisi laut, | rencana personal, dan informasi komunitas.","textChars":86,"textLines":2,"bbox":[42,386,620,72]}
+{"kind":"shape","id":"sh/9oj2hkv6","slide":5,"name":"outcome-rule-0","bbox":[748,182,440,1]}
+{"kind":"textbox","id":"sh/8nal8ful","slide":5,"name":"outcome-item-0","text":"Lebih siap","textPreview":"Lebih siap","textChars":10,"textLines":1,"bbox":[748,204,300,38]}
+{"kind":"textbox","id":"sh/7m1kfadg","slide":5,"name":"outcome-body-0","text":"Kondisi terbaca","textPreview":"Kondisi terbaca","textChars":15,"textLines":1,"bbox":[748,250,340,28]}
+{"kind":"shape","id":"sh/mls36pcv","slide":5,"name":"outcome-rule-1","bbox":[748,320,440,1]}
+{"kind":"textbox","id":"sh/psz250v2","slide":5,"name":"outcome-item-1","text":"Lebih aman","textPreview":"Lebih aman","textChars":10,"textLines":1,"bbox":[748,342,300,38]}
+{"kind":"textbox","id":"sh/orqlwveh","slide":5,"name":"outcome-body-1","text":"Risiko terlihat","textPreview":"Risiko terlihat","textChars":15,"textLines":1,"bbox":[748,388,340,28]}
+{"kind":"shape","id":"sh/epg7qdo7","slide":5,"name":"outcome-rule-2","bbox":[748,458,440,1]}
+{"kind":"textbox","id":"sh/fqpojips","slide":5,"name":"outcome-item-2","text":"Lebih terhubung","textPreview":"Lebih terhubung","textChars":15,"textLines":1,"bbox":[748,480,300,38]}
+{"kind":"textbox","id":"sh/grypsn6d","slide":5,"name":"outcome-body-2","text":"Komunitas berbagi","textPreview":"Komunitas berbagi","textChars":17,"textLines":1,"bbox":[748,526,340,28]}
+{"kind":"textbox","id":"sh/1cr6ls7y","slide":5,"name":"outcome-footer","text":"Ombak Nusantara","textPreview":"Ombak Nusantara","textChars":15,"textLines":1,"bbox":[42,662,260,20]}
+{"kind":"textbox","id":"sh/2d07uxo3","slide":5,"name":"outcome-page","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,662,50,20]}
+{"kind":"notes","id":"nt/s1cbu6","slide":5,"text":"[Sources]\nProduct outcome statement based on workspace application source and intended product positioning."}
+{"kind":"slide","id":"sl/eiya8o","slide":6,"title":"TEKNOLOGI","textShapes":14}
+{"kind":"textbox","id":"sh/943uhwnq","slide":6,"name":"tech-kicker","text":"TEKNOLOGI","textPreview":"TEKNOLOGI","textChars":9,"textLines":1,"bbox":[42,42,220,28]}
+{"kind":"textbox","id":"sh/m1sv6hof","slide":6,"name":"tech-title","text":"Tech stack yang digunakan","textPreview":"Tech stack yang digunakan","textChars":25,"textLines":1,"bbox":[42,86,940,62]}
+{"kind":"textbox","id":"sh/n21cfm5k","slide":6,"name":"tech-lead","text":"Arsitektur end-to-end untuk pengalaman web, riset latar belakang, dan rekomendasi berbasis AI.","textPreview":"Arsitektur end-to-end untuk pengalaman web, riset latar belakang, dan rekomendasi berbasis AI.","textChars":94,"textLines":1,"bbox":[42,162,1120,34]}
+{"kind":"shape","id":"sh/wrudcr6h","slide":6,"name":"tech-divider","bbox":[640,236,1,0]}
+{"kind":"shape","id":"sh/xs3elwn2","slide":6,"name":"tech-left-accent-0","bbox":[42,246,58,4]}
+{"kind":"textbox","id":"sh/a5cva1ob","slide":6,"name":"tech-left-title-0","text":"Frontend","textPreview":"Frontend","textChars":8,"textLines":1,"bbox":[42,268,310,33]}
+{"kind":"textbox","id":"sh/v6lwjm5w","slide":6,"name":"tech-left-body-0","text":"Svelte · Vite · Tailwind CSS","textPreview":"Svelte · Vite · Tailwind CSS","textChars":28,"textLines":1,"bbox":[42,308,520,30]}
+{"kind":"shape","id":"sh/kvedgb6d","slide":6,"name":"tech-left-accent-1","bbox":[42,359,58,4]}
+{"kind":"textbox","id":"sh/5wnepgny","slide":6,"name":"tech-left-title-1","text":"Backend & data","textPreview":"Backend & data","textChars":14,"textLines":1,"bbox":[42,381,310,33]}
+{"kind":"textbox","id":"sh/1o3uloz2","slide":6,"name":"tech-left-body-1","text":"FastAPI · SQLModel · Alembic · SQLite","textPreview":"FastAPI · SQLModel · Alembic · SQLite","textChars":37,"textLines":1,"bbox":[42,421,520,30]}
+{"kind":"shape","id":"sh/0nudcjyh","slide":6,"name":"tech-left-accent-2","bbox":[42,472,58,4]}
+{"kind":"textbox","id":"sh/fmlcjehw","slide":6,"name":"tech-left-title-2","text":"Background jobs","textPreview":"Background jobs","textChars":15,"textLines":1,"bbox":[42,494,310,33]}
+{"kind":"textbox","id":"sh/elcva9gb","slide":6,"name":"tech-left-body-2","text":"Celery · Redis","textPreview":"Celery · Redis","textChars":14,"textLines":1,"bbox":[42,534,520,30]}
+{"kind":"shape","id":"sh/pcnepozy","slide":6,"name":"tech-right-accent-0","bbox":[696,246,58,4]}
+{"kind":"textbox","id":"sh/obudgjyd","slide":6,"name":"tech-right-title-0","text":"AI & research","textPreview":"AI & research","textChars":13,"textLines":1,"bbox":[696,268,340,33]}
+{"kind":"textbox","id":"sh/nqlcnehs","slide":6,"name":"tech-right-body-0","text":"OpenAI GPT-4o · Agno · Tavily","textPreview":"OpenAI GPT-4o · Agno · Tavily","textChars":29,"textLines":1,"bbox":[696,308,500,56]}
+{"kind":"shape","id":"sh/2pcvetgn","slide":6,"name":"tech-right-accent-1","bbox":[696,394,58,4]}
+{"kind":"textbox","id":"sh/5gjud4zu","slide":6,"name":"tech-right-title-1","text":"Knowledge layer","textPreview":"Knowledge layer","textChars":15,"textLines":1,"bbox":[696,416,340,33]}
+{"kind":"textbox","id":"sh/4fad4zy9","slide":6,"name":"tech-right-body-1","text":"ChromaDB · text-embedding-3-small · MCP","textPreview":"ChromaDB · text-embedding-3-small · MCP","textChars":39,"textLines":1,"bbox":[696,456,500,56]}
+{"kind":"textbox","id":"sh/wzedkzq5","slide":6,"name":"footer-6","text":"Ombak Nusantara  /  06","textPreview":"Ombak Nusantara  /  06","textChars":22,"textLines":1,"bbox":[42,662,360,20]}
+{"kind":"notes","id":"nt/eiya8o","slide":6,"text":"[Sources]\nTechnology stack based on workspace source: README.md, frontend/package.json, backend/app/modules/surf/agents.py, backend/app/modules/mcp/server.py, and backend/app/modules/knowledge/vectordb.py."}

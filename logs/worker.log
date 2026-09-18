@@ -1,0 +1,29 @@
+uv run celery -A backend.app.worker worker --loglevel=info
+ 
+ -------------- celery@Trilaksonos-MacBook-Air.local v5.6.3 (recovery)
+--- ***** ----- 
+-- ******* ---- macOS-15.6.1-arm64-arm-64bit-Mach-O 2026-07-21 15:44:07
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         ombak_nusantara_worker:0x105655fd0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: 8 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . backend.app.modules.research.tasks.start_process_research
+  . backend.app.modules.social.tasks.fetch_weather_for_post
+
+[2026-07-21 15:44:08,318: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2026-07-21 15:44:08,321: INFO/MainProcess] mingle: searching for neighbors
+[2026-07-21 15:44:09,330: INFO/MainProcess] mingle: all alone
+[2026-07-21 15:44:09,357: INFO/MainProcess] celery@Trilaksonos-MacBook-Air.local ready.
+
+worker: Warm shutdown (MainProcess)
+
+worker: Warm shutdown (MainProcess)
