@@ -332,7 +332,7 @@ async def delete_post(post_id: int, user_id: int, db: Session = Depends(get_sess
         db.delete(like)
         
     # Delete associated notifications
-    notifs = db.exec(select(Notification).where(Notification.post_id == post_id)).all()
+    notifs = db.exec(select(Notification).where(Notification.entity_id == post_id, Notification.entity_type == 'post')).all()
     for notif in notifs:
         db.delete(notif)
         

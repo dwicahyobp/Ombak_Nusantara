@@ -56,8 +56,6 @@ def start_process_research(surf_data: dict):
             ]
         }
         warning_report = json.dumps(warning_report_dict)
-        with open("surf_report.md", "w") as file:
-            file.write(warning_report)
         
         if job_id:
             _update_job(
@@ -93,9 +91,6 @@ def start_process_research(surf_data: dict):
             raise ValueError("Failed to synthesize surf report")
 
         print("Saving surf report...")
-        with open("surf_report.md", "w") as file:
-            file.write(raw_report)
-
         # ✅ Simpan hasil ke DB
         if job_id:
             _update_job(
