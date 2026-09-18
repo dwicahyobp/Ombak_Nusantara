@@ -1,0 +1,31 @@
+# Ombak Nusantara - Panduan Keselamatan Pantai (Knowledge Base)
+
+## Kuta Beach, Bali
+- Dasar Laut: Pasir (Sand bottom)
+- Tingkat Kesulitan: Beginner (Pemula) hingga Intermediate
+- Kondisi Bahaya: Arus balik (rip current) kadang muncul, namun ombak cenderung bersahabat, lambat, dan memaafkan. Sangat direkomendasikan untuk sesi latihan pertama.
+- Status Keselamatan: SAFE untuk pemula.
+
+## Batu Bolong, Canggu
+- Dasar Laut: Karang datar dan pasir (Reef/Sand mix)
+- Tingkat Kesulitan: Beginner (Pemula) hingga Intermediate
+- Kondisi Bahaya: Sangat ramai (crowded). Ombaknya tebal dan lambat (fat and slow), sehingga aman untuk pemula, terutama saat air pasang (high tide). Hindari saat surut (low tide) karena karang bisa terekspos.
+- Status Keselamatan: SAFE untuk pemula (saat ombak tidak terlalu besar).
+
+## Uluwatu, Bali
+- Dasar Laut: Karang dangkal yang sangat tajam (Sharp shallow reef)
+- Tingkat Kesulitan: Advanced hingga Expert
+- Kondisi Bahaya: Terletak di bawah tebing. Arus sangat kuat, terutama saat pasang-surut ekstrem. Gelombang bisa sangat besar, bertenaga, dan menggulung keras. Sangat mematikan bagi peselancar pemula.
+- Status Keselamatan: DANGER (Ditolak) untuk Beginner.
+
+## Padang Padang, Bali
+- Dasar Laut: Karang sangat tajam (Very sharp reef)
+- Tingkat Kesulitan: Expert (Pro level)
+- Kondisi Bahaya: Salah satu ombak "pipeline" paling berbahaya di Indonesia. Ombak pecah sangat dangkal di atas karang tajam. Kesalahan kecil bisa menyebabkan cedera kepala atau punggung parah.
+- Status Keselamatan: DANGER (Ditolak) untuk Beginner dan Intermediate.
+
+## Desert Point (Bangko-Bangko), Lombok
+- Dasar Laut: Karang api dan tajam (Fire coral reef)
+- Tingkat Kesulitan: Expert (Pro level)
+- Kondisi Bahaya: Ombak super cepat, dangkal, dan arus yang sangat brutal. Berada di area terpencil, jauh dari fasilitas medis memadai.
+- Status Keselamatan: DANGER (Ditolak) untuk Beginner dan Intermediate.
