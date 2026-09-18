@@ -53,3 +53,4 @@ class SurfPlanCreateRequest(BaseModel):
     user_id: int = Field(..., description="ID of the user creating the plan")
     target_spot: str = Field(..., description="Surfing spot destination")
     planned_date: str = Field(..., description="Target date in YYYY-MM-DD format")
+    preferred_time: Optional[str] = Field(default="Morning", description="Preferred surfing time")

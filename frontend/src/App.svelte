@@ -163,7 +163,7 @@
       </aside>
 
       <!-- Main Content Area -->
-      <main class="flex-1 overflow-y-auto bg-transparent relative custom-scrollbar">
+      <main class="flex-1 overflow-y-auto bg-ocean-depth relative custom-scrollbar">
         {#if !isGuest}
           <!-- Notifications Bell (Top Right) -->
           <div class="absolute top-[48px] right-8 md:top-[60px] md:right-10 z-50">
