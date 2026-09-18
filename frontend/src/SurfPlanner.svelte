@@ -111,37 +111,38 @@
   }
   
   async function generateResearch(overridePrompt = null) {
-    if (typeof overridePrompt === 'string') {
-      location = overridePrompt;
-      selectedLat = null;
-      selectedLng = null;
-    }
-    if (!location || !date || !skill_level) return addToast('Fill all fields', 'warning');
-    loading = true;
-    result = null;
-    
-    try {
-      const res = await fetch('/api/planner/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          target_spot: location,
-          skill_level: skill_level,
-          date: date,
-          region: region || "Indonesia",
-          preferred_time: preferred_time
-        })
-      });
-      
-      if (!res.ok) throw new Error('Failed to start research job');
-      const data = await res.json();
-      
-      pollResearchJob(data.job_id);
-    } catch (e) {
-      addToast(e.message, 'error');
-      loading = false;
-    }
+  if (typeof overridePrompt === 'string') {
+    location = overridePrompt;
+    selectedLat = null;
+    selectedLng = null;
   }
+  if (!location || !date || !skill_level) return addToast('Fill all fields', 'warning');
+  loading = true;
+  result = null;
+
+  try {
+    const res = await fetch('/api/surf/analyze', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        user_id: user.id,
+        target_spot: location,
+        planned_date: date,
+        preferred_time: preferred_time
+      })
+    });
+
+    if (!res.ok) throw new Error('Failed to generate surf plan');
+    const data = await res.json();
+
+    result = data.report_markdown || "No data generated.";
+    loading = false;
+    addToast('Your Surf Plan is ready!', 'success');
+  } catch (e) {
+    addToast(e.message, 'error');
+    loading = false;
+  }
+}
   
   function pollResearchJob(jobId) {
     pollingInterval = setInterval(async () => {
@@ -248,79 +249,56 @@
       <!-- Bento Grid Layout for AI Surf Plan (JSON) -->
       {#if parsedResult}
       <div in:fly={{y: 20, duration: 600, delay: 200}} class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        
-        <!-- Safety Alert Box (Full Width) -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-3 glass-card-3d relative overflow-hidden p-6 md:p-8 {parsedResult.status.includes('NO-GO') ? 'bg-red-500/10 border-red-500/50' : 'bg-safe/10 border-safe/50'}">
-          <div class="flex items-center gap-4 mb-3">
-            <span class="text-4xl animate-pulse">{parsedResult.status.includes('NO-GO') ? '🛑' : '✅'}</span>
-            <h3 class="text-2xl font-bold font-display {parsedResult.status.includes('NO-GO') ? 'text-red-500' : 'text-safe'}">Status: {parsedResult.status}</h3>
-          </div>
-          <p class="text-lg font-medium text-ink leading-relaxed">{parsedResult.safety_alert}</p>
-        </div>
 
-        <!-- Top Row (3 Boxes) -->
-        <!-- Live Marine Data Box -->
-        <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
-          <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">📊 Marine Data</h3>
-          <ul class="space-y-3">
-            {#each parsedResult.live_marine_data as item}
-              <li class="text-sm text-ink flex items-start gap-2">
-                {@html window.marked ? window.marked.parse(item) : item}
-              </li>
-            {/each}
-          </ul>
-        </div>
+  <!-- Status Box (Full Width) -->
+  <div class="col-span-1 md:col-span-2 lg:col-span-3 glass-card-3d relative overflow-hidden p-6 md:p-8 {parsedResult.status === 'REJECTED' ? 'bg-red-500/10 border-red-500/50' : 'bg-safe/10 border-safe/50'}">
+    <div class="flex items-center gap-4 mb-3">
+      <span class="text-4xl animate-pulse">{parsedResult.status === 'REJECTED' ? '🛑' : '✅'}</span>
+      <h3 class="text-2xl font-bold font-display {parsedResult.status === 'REJECTED' ? 'text-red-500' : 'text-safe'}">Status: {parsedResult.status}</h3>
+    </div>
+  </div>
 
-        <!-- Gear & Hazards Box -->
-        <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
-          <h3 class="text-sm font-bold tracking-widest text-coral uppercase mb-4 pb-2 border-b border-black/5">🎒 Gear & Hazards</h3>
-          <ul class="space-y-3">
-            {#each parsedResult.gear_hazards as item}
-              <li class="text-sm text-ink flex items-start gap-2">
-                {@html window.marked ? window.marked.parse(item) : item}
-              </li>
-            {/each}
-          </ul>
-        </div>
+  <!-- Surf Conditions Box -->
+  <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
+    <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">📊 Surf Conditions</h3>
+    <div class="prose prose-sm max-w-none text-ink">
+      {@html window.marked ? window.marked.parse(parsedResult.surf_conditions || '') : parsedResult.surf_conditions}
+    </div>
+  </div>
 
-        <!-- Where to Stay Box -->
-        <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
-          <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">🏨 Where to Stay</h3>
-          <ul class="space-y-3">
-            {#each parsedResult.hotel_recommendations as item}
-              <li class="text-sm text-ink bg-white/50 p-3 rounded-xl border border-black/5 shadow-sm">
-                {@html window.marked ? window.marked.parse(item) : item}
-              </li>
-            {/each}
-          </ul>
-        </div>
+  <!-- Gear & Hazards Box -->
+  <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
+    <h3 class="text-sm font-bold tracking-widest text-coral uppercase mb-4 pb-2 border-b border-black/5">🎒 Gear & Hazards</h3>
+    <div class="prose prose-sm max-w-none text-ink">
+      {@html window.marked ? window.marked.parse(parsedResult.gear_hazards || '') : parsedResult.gear_hazards}
+    </div>
+  </div>
 
-        <!-- Bottom Row (2 Boxes) -->
-        <!-- Local Logistics Box -->
-        <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
-          <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">💼 Logistics</h3>
-          <ul class="space-y-3">
-            {#each parsedResult.local_logistics as item}
-              <li class="text-sm text-ink flex items-start gap-2">
-                {@html window.marked ? window.marked.parse(item) : item}
-              </li>
-            {/each}
-          </ul>
-        </div>
+  <!-- Where to Stay Box -->
+  <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
+    <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">🏨 Where to Stay</h3>
+    <div class="prose prose-sm max-w-none text-ink">
+      {@html window.marked ? window.marked.parse(parsedResult.hotel_recommendations || '') : parsedResult.hotel_recommendations}
+    </div>
+  </div>
 
-        <!-- Comprehensive Itinerary Box (Spans 2 columns on lg) -->
-        <div class="md:col-span-1 lg:col-span-2 glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
-          <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">📅 Timeline Itinerary</h3>
-          <div class="space-y-4">
-            {#each parsedResult.trip_plan as item}
-              <div class="text-sm text-ink bg-white/50 p-3 rounded-xl border border-black/5 shadow-sm">
-                {@html window.marked ? window.marked.parse(item) : item}
-              </div>
-            {/each}
-          </div>
-        </div>
+  <!-- Local Logistics Box -->
+  <div class="glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
+    <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">💼 Logistics</h3>
+    <div class="prose prose-sm max-w-none text-ink">
+      {@html window.marked ? window.marked.parse(parsedResult.local_ecosystem || '') : parsedResult.local_ecosystem}
+    </div>
+  </div>
 
-      </div>
+  <!-- Comprehensive Itinerary Box (Spans 2 columns on lg) -->
+  <div class="md:col-span-1 lg:col-span-2 glass-card-3d bg-white/40 p-6 border border-white/80 group hover:border-wave/50">
+    <h3 class="text-sm font-bold tracking-widest text-wave uppercase mb-4 pb-2 border-b border-black/5">📅 Timeline Itinerary</h3>
+    <div class="prose prose-sm max-w-none text-ink">
+      {@html window.marked ? window.marked.parse(parsedResult.trip_plan || '') : parsedResult.trip_plan}
+    </div>
+  </div>
+
+</div>
       {/if}
     {:else}
       <div class="glass-card h-full flex flex-col items-center justify-center text-center gap-6 border-dashed border-2 border-wave/20 bg-white/30 backdrop-blur-sm min-h-[500px]">

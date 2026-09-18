@@ -5,34 +5,58 @@
 @layer base {
   body {
     background-color: transparent;
-    color: #0E2A33; /* ink */
+    color: #0E2A33;
+    /* ink */
     font-family: 'Plus Jakarta Sans', sans-serif;
     min-height: 100vh;
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Clash Display', sans-serif;
     @apply text-ink;
   }
 }
 
 @keyframes gradient-mesh {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .bg-mesh {
   background-color: #E2E6DF;
-  background-image: 
-    radial-gradient(circle at 10% 10%, rgba(138,198,197,0.8) 0%, transparent 50%),
-    radial-gradient(circle at 90% 10%, rgba(98,155,152,0.6) 0%, transparent 50%),
-    radial-gradient(circle at 20% 90%, rgba(230,205,160,0.8) 0%, transparent 50%),
-    radial-gradient(circle at 80% 90%, rgba(118,175,170,0.6) 0%, transparent 50%);
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(138, 198, 197, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(98, 155, 152, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 20% 90%, rgba(230, 205, 160, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(118, 175, 170, 0.6) 0%, transparent 50%);
   background-size: 200% 200%;
   animation: gradient-mesh 20s ease infinite alternate;
+  background-attachment: fixed;
+}
+
+.bg-ocean-depth {
+  background-color: #EAF3F4;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(28, 114, 147, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 10%, rgba(255, 107, 74, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 20% 85%, rgba(42, 157, 143, 0.24) 0%, transparent 50%),
+    radial-gradient(circle at 90% 85%, rgba(7, 59, 76, 0.18) 0%, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -40,11 +64,11 @@
   .btn-primary {
     @apply bg-wave text-white px-5 py-2.5 rounded-xl font-semibold hover:-translate-y-0.5 active:scale-95 transition-all shadow-md cursor-pointer border-none flex items-center justify-center gap-2;
   }
-  
+
   .btn-coral {
     @apply bg-coral text-white px-5 py-2.5 rounded-xl font-semibold hover:-translate-y-0.5 active:scale-95 transition-all shadow-md cursor-pointer border-none flex items-center justify-center gap-2;
   }
-  
+
   .btn-secondary {
     @apply bg-surfaceDeep text-ink px-5 py-2.5 rounded-xl hover:bg-black/5 active:scale-95 transition-all cursor-pointer font-semibold flex items-center justify-center gap-2;
   }
@@ -52,33 +76,33 @@
   .btn-outline {
     @apply bg-transparent border-2 border-black/10 text-ink px-5 py-2.5 rounded-xl hover:bg-black/5 active:scale-95 transition-all cursor-pointer font-semibold flex items-center justify-center gap-2;
   }
-  
+
   .input-field {
     @apply w-full bg-surface border border-black/5 rounded-xl p-3.5 text-ink focus:outline-none focus:border-wave focus:ring-1 focus:ring-wave transition-all duration-300 shadow-sm;
   }
-  
+
   .glass-card {
     @apply bg-white/70 backdrop-blur-xl border border-white shadow-soft rounded-2xl p-6 transition-all duration-300;
   }
 
   .glass-card-3d {
     @apply bg-white/50 backdrop-blur-3xl rounded-2xl p-6;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 0 0 1px rgba(255,255,255,0.3), 0 8px 32px rgba(31,38,135,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.3), 0 8px 32px rgba(31, 38, 135, 0.07);
     transform: perspective(1000px) rotateX(0) rotateY(0) scale(1);
     will-change: transform, box-shadow;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border 0.4s ease;
   }
-  
+
   .glass-card-3d:hover {
-    border: 1px solid rgba(255,255,255,0.7);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1), inset 0 0 0 1px rgba(255,255,255,0.6), 0 15px 40px rgba(31,38,135,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1), inset 0 0 0 1px rgba(255, 255, 255, 0.6), 0 15px 40px rgba(31, 38, 135, 0.12);
   }
 
   .hover-float {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+
   .hover-float:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(7, 59, 76, 0.1);
@@ -87,95 +111,117 @@
   .text-gradient-wave {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-wave to-deep;
   }
-  
+
   .animate-fade-up {
     animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
     transform: translateY(20px);
   }
-  
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
 
   .chip {
     @apply font-sans text-[13px] font-bold px-4 py-2 rounded-full bg-surfaceDeep text-inkSoft border border-transparent cursor-pointer transition-all;
   }
+
   .chip.active {
     @apply bg-deep text-white shadow-md;
   }
-  
+
   /* Make calendar icon fit light theme */
   input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(0.2) sepia(0.5) saturate(2) hue-rotate(150deg);
     cursor: pointer;
   }
-  
+
   /* Custom Clean Scrollbar for body */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: rgba(14, 42, 51, 0.15); /* ink with opacity */
+    background: rgba(14, 42, 51, 0.15);
+    /* ink with opacity */
     border-radius: 10px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(14, 42, 51, 0.3);
   }
-  
+
   /* Hide scrollbar entirely for component containers */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   /* Premium Editorial Markdown Styling (Light Theme) */
   .prose-premium {
     @apply text-ink leading-relaxed;
   }
-  .prose-premium h1 { 
+
+  .prose-premium h1 {
     @apply text-deep font-semibold mb-6;
-    font-size: 2.5rem; 
-    letter-spacing: -0.03em; 
-    line-height: 1.1; 
+    font-size: 2.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
   }
-  .prose-premium h2 { 
+
+  .prose-premium h2 {
     @apply text-deep font-semibold mb-4 mt-8;
-    font-size: 1.75rem; 
-    letter-spacing: -0.02em; 
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
   }
-  .prose-premium h3 { 
+
+  .prose-premium h3 {
     @apply text-wave font-medium mb-3 mt-6;
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
   }
-  .prose-premium h4 { 
+
+  .prose-premium h4 {
     @apply text-coral font-medium mb-2 mt-4;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
-  
-  .prose-premium ul > li {
+
+  .prose-premium ul>li {
     @apply mb-1;
   }
-  .prose-premium ul > li::marker {
+
+  .prose-premium ul>li::marker {
     @apply text-wave;
   }
-  
+
   .prose-premium blockquote {
     @apply border-l-4 border-l-wave bg-surfaceDeep/50 rounded-r-xl py-3 px-6 italic my-6 text-inkSoft;
   }
-  
+
   .prose-premium strong {
     @apply text-deep font-bold;
   }
-  
+
   .prose-premium hr {
     @apply border-black/10 my-8;
   }
@@ -188,6 +234,7 @@
   gap: 3px;
   height: 20px;
 }
+
 .wave-loader div {
   width: 4px;
   height: 100%;
@@ -195,24 +242,61 @@
   @apply bg-wave;
   animation: waveLoading 1.2s ease-in-out infinite;
 }
-.wave-loader div:nth-child(1) { animation-delay: -1.2s; }
-.wave-loader div:nth-child(2) { animation-delay: -1.1s; }
-.wave-loader div:nth-child(3) { animation-delay: -1.0s; }
-.wave-loader div:nth-child(4) { animation-delay: -0.9s; }
-.wave-loader div:nth-child(5) { animation-delay: -0.8s; }
+
+.wave-loader div:nth-child(1) {
+  animation-delay: -1.2s;
+}
+
+.wave-loader div:nth-child(2) {
+  animation-delay: -1.1s;
+}
+
+.wave-loader div:nth-child(3) {
+  animation-delay: -1.0s;
+}
+
+.wave-loader div:nth-child(4) {
+  animation-delay: -0.9s;
+}
+
+.wave-loader div:nth-child(5) {
+  animation-delay: -0.8s;
+}
 
 @keyframes waveLoading {
-  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
-  50% { transform: scaleY(1); opacity: 1; }
+
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 /* Micro-interaction Pop Animation */
 @keyframes likePop {
-  0% { transform: scale(1); }
-  40% { transform: scale(1.5) rotate(-15deg); color: #FF6B4A; }
-  70% { transform: scale(0.9) rotate(5deg); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.5) rotate(-15deg);
+    color: #FF6B4A;
+  }
+
+  70% {
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
+
 .animate-like-pop {
   animation: likePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -222,6 +306,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

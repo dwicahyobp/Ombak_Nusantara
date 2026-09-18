@@ -398,7 +398,7 @@
   }
 </script>
 
-<div class="space-y-6 max-w-2xl mx-auto w-full">
+<div class="space-y-6 max-w-3xl mx-auto w-full">
   <!-- Top Navigation & Search -->
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-black/5">
     <div class="flex items-center gap-2 text-wave font-black">
@@ -519,7 +519,7 @@
       </div>
     {:else}
       {#each filteredPosts as post (post.id)}
-        <div id="post-{post.id}" transition:slide={{ duration: 400 }} class="p-5 md:p-7 rounded-3xl bg-white/70 backdrop-blur-2xl border border-white/60 shadow-xl shadow-wave/5 space-y-4 relative transition-all duration-300">
+        <div id="post-{post.id}" transition:slide={{ duration: 400 }} class="p-6 md:p-8 rounded-3xl bg-white/80 backdrop-blur-2xl border-l-4 {post.category === 'Alert' ? 'border-l-warning' : post.category === 'Community' ? 'border-l-safe' : 'border-l-wave'} border-t border-r border-b border-white/60 shadow-xl shadow-wave/10 space-y-4 relative transition-all duration-300">
           {#if post.user_id === user.id}
             <button 
               class="absolute top-5 right-5 text-inkSoft hover:text-warning transition-colors"
@@ -532,9 +532,9 @@
           <div>
             <div class="flex items-center gap-3.5 mb-4">
               {#if post.profile_pic_url}
-                <img src={post.profile_pic_url} alt="Profile" class="w-12 h-12 rounded-full object-cover ring-2 ring-wave/20 shadow-sm">
+                <img src={post.profile_pic_url} alt="Profile" class="w-14 h-14 rounded-full object-cover ring-2 ring-wave/20 shadow-sm">
               {:else}
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-wave to-deep flex items-center justify-center text-white font-bold text-lg shadow-sm ring-2 ring-wave/20">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-wave to-deep flex items-center justify-center text-white font-bold text-lg shadow-sm ring-2 ring-wave/20">
                   {post.username.charAt(0).toUpperCase()}
                 </div>
               {/if}

@@ -281,7 +281,7 @@
   <!-- Header Row -->
   <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-0">
     <div>
-      <h1 class="text-3xl font-display font-black tracking-tight mb-1 uppercase">TODAY'S SURF: {activeSpot.region.split(',')[0]}</h1>
+      <h1 class="text-3xl font-display font-black tracking-tight mb-1 uppercase">TODAY'S SURF<span class="mx-2">:</span><span class="text-coral font-script text-5xl normal-case font-normal">{activeSpot.region.split(',')[0]}</span></h1>
       <p class="text-sm font-medium text-[#0F2922]/70">{dateStr}</p>
     </div>
     
