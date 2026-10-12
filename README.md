@@ -1,53 +1,131 @@
-# Ombak Nusantara - Final Project
+# Ombak Nusantara 🌊
 
-This is a complete end-to-end application built for the Final Project, fulfilling all the technical requirements for an AI-powered agentic system.
+An AI-powered surf community and trip-planning app for Indonesian surf spots. Surfers can generate a personalised surf plan (conditions, safety status, gear, stay and itinerary), share sessions, report hazards, and trade gear with the community.
 
-## 🌟 Features & Technical Checklist
+Built as the final exam project of the **Devscale AI-Enabled Python Web Development Bootcamp**.
 
-✅ **Technology Stack**
-- **FastAPI**: Main web framework serving the API and Frontend.
-- **SQLModel & Alembic**: ORM and migrations managing `User`, `SurfPlan`, and `SurfReport` models.
-- **Celery & Redis**: Background worker task queue for heavy deep research processes.
-- **SQLite**: Local database for persistence.
-- **Frontend**: A sleek, dark-mode Vanilla JS + HTML + CSS UI built from scratch to act as the web interface.
+## Features
 
-✅ **AI & Agents**
-- **LLM Model**: Powered by OpenAI `gpt-4o`.
-- **Agents with Tools**: Uses `TavilyTools` for live web search and custom ChromaDB tools.
-- **MCP (Model Context Protocol)**: Standalone FastMCP server running in `backend/app/modules/mcp/server.py` exposing safety database as tools.
-- **Vector DB (Embeddings)**: `ChromaDB` initialized with OpenAI `text-embedding-3-small` used for retrieval.
-- **Sub-Agents**: Implemented `Surf Report Sub-Agent` and `Surf Plan Sub-Agent` in `agents.py`.
-- **Agentic Workflow**: A Supervisor Team agent intelligently orchestrates the sub-agents and synthesizes final responses based on user profiles.
+- **Surf Planner**: pick a spot, date, and preferred time; a multi-agent system researches live conditions and local safety rules, then returns a structured plan. Every plan is saved to **My Surf Plans**.
+- **Session Feed**: photo/video posts with likes, comments, @mentions, notifications, and one-click translation.
+- **Community**: discussion threads, a gear marketplace, and meetups.
+- **Hazard Alerts**: community-reported hazards with severity, location, and media.
+- **Dashboard & Map**: today's surf summary for the selected spot, spot map, and live cams.
 
-## 🚀 How to Run the Application
+## AI architecture
 
-The application consists of multiple components. Follow these steps to start them all:
+| Piece | Implementation |
+| --- | --- |
+| Framework | [Agno](https://www.agno.com/) agents with OpenAI `gpt-4o` |
+| Agentic workflow | A **Supervisor** team agent orchestrates the sub-agents and writes the final report, adapted to the user's profile |
+| Sub-agents | **Surf Report Sub-Agent** (live web search via Tavily) and **Surf Plan Sub-Agent** (safety knowledge via ChromaDB) |
+| Vector DB | ChromaDB with `text-embedding-3-small` embeddings, seeded from `backend/app/modules/knowledge/data/safety_rules.txt` |
+| MCP | A FastMCP server exposes the safety knowledge base as tools (`backend/app/modules/mcp/server.py`) |
+| Background jobs | Celery + Redis (post weather sync, legacy deep-research jobs) |
 
-### 1. Start the API Server & Frontend
-This starts the main FastAPI server which also serves the Web UI.
-```bash
-make dev
-# Open http://127.0.0.1:8000 in your browser for the Web UI.
+More detail: [`.codex/AGENTS.md`](.codex/AGENTS.md).
+
+## Tech stack
+
+- **Backend:** FastAPI, SQLModel, Alembic, Celery, Redis, SQLite
+- **Frontend:** Svelte 4, Vite 5, Tailwind CSS 3
+- **Tooling:** Python ≥ 3.13, [uv](https://docs.astral.sh/uv/), Node.js 18+
+
+## Getting started
+
+### 1. Prerequisites
+
+- Python 3.13+ and [uv](https://docs.astral.sh/uv/)
+- Node.js 18+
+- Redis running on `localhost:6379` (needed for Celery features)
+- An [OpenAI API key](https://platform.openai.com/api-keys) and a [Tavily API key](https://tavily.com/)
+
+### 2. Configure environment
+
+Create a `.env` file in the project root:
+
+```env
+OPENAI_API_KEY=your-openai-key
+TAVILY_API_KEY=your-tavily-key
+# Optional overrides
+# DB_URL=sqlite:///./dev.db
+# REDIS_URL=redis://localhost:6379/0
 ```
 
-### 2. Start the Celery Worker
-(Ensure you have `redis-server` running in the background on port 6379)
-Open a new terminal and run:
+> Never commit `.env`. It is already listed in `.gitignore`.
+
+### 3. Install dependencies
+
+```bash
+uv sync
+cd frontend && npm install && cd ..
+```
+
+### 4. Seed the knowledge base (first run)
+
+```bash
+uv run python -m backend.app.modules.knowledge.vectordb
+```
+
+### 5. Run the app
+
+Build the frontend once, then start the API server (it also serves the built UI):
+
+```bash
+cd frontend && npm run build && cd ..
+make dev
+# open http://127.0.0.1:8000
+```
+
+Start the Celery worker in a second terminal (Redis must be running):
+
 ```bash
 make worker
 ```
 
-### 3. Run the MCP Server
-To expose the knowledge base as an MCP server over stdio (compatible with Claude Desktop):
+**Frontend development with hot reload:** keep `make dev` running, then in another terminal:
+
 ```bash
-uv run python -m backend.app.modules.mcp.server
+cd frontend && npm run dev
+# open http://localhost:5173/static/   (note the /static/ path)
 ```
 
-## 🛠 Project Structure
-- `backend/app/main.py` - FastAPI entry point.
-- `backend/app/modules/surf/agents.py` - Swarm and Sub-Agent definition.
-- `backend/app/modules/knowledge/vectordb.py` - ChromaDB implementation.
-- `backend/app/modules/mcp/server.py` - FastMCP Server.
-- `backend/app/modules/research/tasks.py` - Celery Tasks for deep web search.
-- `frontend/` - HTML, CSS, JS files for the sleek user interface.
-- `.codex/AGENTS.md` - Documentation of the agentic workflow architecture.
+### 6. Try the MCP server
+
+The MCP server speaks over stdio, so test it with the MCP Inspector:
+
+```bash
+npx @modelcontextprotocol/inspector uv run python -m backend.app.modules.mcp.server
+```
+
+It also works with MCP clients such as Claude Desktop.
+
+## Project structure
+
+```
+backend/app/
+├── main.py                  # FastAPI entry point, serves the built frontend
+├── core/settings.py         # Environment-based configuration
+├── models/                  # SQLModel tables and DB engine
+└── modules/
+    ├── surf/                # Supervisor + sub-agents, /api/surf endpoints, plan history
+    ├── knowledge/           # ChromaDB vector store and safety rules data
+    ├── mcp/                 # FastMCP server
+    ├── social/              # Feed, community, notifications, hazards (/api/social)
+    ├── planner/             # Celery-based deep-research jobs (/api/planner)
+    └── agent/               # Coding-agent endpoint (/api/agent)
+frontend/src/                # Svelte components (Dashboard, SurfPlanner, SocialFeed, ...)
+migrations/                  # Alembic migrations
+```
+
+## API docs
+
+With the server running, interactive docs are available at `http://127.0.0.1:8000/docs` (Swagger UI) and `http://127.0.0.1:8000/scalar` (Scalar).
+
+## Contributing
+
+Issues and pull requests are welcome.
+
+## License
+
+Released under the MIT License. See [`LICENSE`](LICENSE).
