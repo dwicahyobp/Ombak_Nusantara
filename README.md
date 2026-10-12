@@ -4,6 +4,22 @@ An AI-powered surf community and trip-planning app for Indonesian surf spots. Su
 
 Built as the final exam project of the **Devscale AI-Enabled Python Web Development Bootcamp**.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/dashboard.png" alt="Dashboard"></td>
+    <td><img src="docs/screenshots/surf-plan.png" alt="Surf Plan"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/session.png" alt="Session Feed"></td>
+    <td><img src="docs/screenshots/community.png" alt="Community"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="docs/screenshots/hazard-alert.png" alt="Hazard Alert" width="50%"></td>
+  </tr>
+</table>
+
 ## Features
 
 - **Surf Planner**: pick a spot, date, and preferred time; a multi-agent system researches live conditions and local safety rules, then returns a structured plan. Every plan is saved to **My Surf Plans**.
